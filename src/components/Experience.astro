@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCE = [
+    {
+        date: 'Actualmente ...',
+        title: 'Programador Backend',
+        description: 'Con experiencia en el diseño y desarrollo de aplicaciones backend robustas, me especializo en la creación de APIs escalables y eficientes. Utilizo tecnologías modernas como Node.js, Express, y bases de datos SQL/NoSQL para garantizar que los sistemas sean seguros, rápidos y fáciles de mantener.',
+        link: '#',
+    },
+    {
+        date: 'Enero 2024',
+        title: 'AI Developer',
+        description: 'Como desarrollador en inteligencia artificial, tengo experiencia en el diseño e implementación de modelos de aprendizaje automático y procesamiento de datos. Utilizo herramientas y frameworks como Python, TensorFlow, y PyTorch para construir soluciones que automatizan tareas complejas, analizan grandes volúmenes de datos y mejoran la toma de decisiones. He trabajado en proyectos que incluyen desde el procesamiento de lenguaje natural (NLP) hasta la visión por computadora, implementando modelos entrenados para resolver problemas específicos del negocio. Mi enfoque está en crear sistemas inteligentes que sean escalables, eficientes y capaces de adaptarse a nuevas realidades mediante el uso de IA.',
+        
+    },
+    {
+        date: 'Febrero 2023',
+        title: 'Programador Frontend',
+        description: 'Como programador frontend, me enfoco en construir interfaces de usuario interactivas y amigables, utilizando tecnologías como HTML, CSS, JavaScript y frameworks modernos como React, Preact y Astro. Tengo experiencia en crear experiencias web dinámicas, centradas en el usuario y con un alto nivel de rendimiento. Mi enfoque está en la accesibilidad, el diseño responsive, y la optimización para diferentes dispositivos y navegadores. Además, trabajo en estrecha colaboración con equipos de backend para integrar las interfaces con las APIs y servicios, asegurando una experiencia fluida y coherente para el usuario final.',
+        
+    },
+   
+    {
+        date: 'Octubre 2022',
+        title: 'Aplicatio UI code in tailwind css',
+        description: 'Get acces to ober 20+ pages including a dashboard layout, charts, kanban, board, clanedar, and pre-order E-commerce y Marketing pages.',
+        
+    },
+]
+---
+
+
+<ol class="relative border-s border-gray-200 ml-3">       
+    {
+        EXPERIENCE.map(experience => (
+            <li class="mb-10 ms-4"> 
+                <ExperienceItem {... experience} />
+            </li>
+        ))
+    }           
+    
+</ol>
+

@@ -1,0 +1,49 @@
+---
+import AstroIcon from './icons/AstroIcon.astro'
+import TailwindIcon from './icons/TailwindIcon.astro'
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "bg-black text white",
+        icon: AstroIcon,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-black text white",
+        icon: TailwindIcon,
+    }
+}
+const PROJECTS = [
+    {
+        title: 'Pagina Web de Hotel Ubicado en Yopal, Casanare',
+        description: 'Pagina creada con Astro una de las mejores tecnologias tanto en rendimiento y optimizacion.',
+        link: '#',
+        github: '#',
+        image: '/projects/svgl.png',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, ]
+    }
+    
+]
+---
+
+{
+    PROJECTS.map(({ image, title, description, tags}) =>(
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2">
+                {tags.map((tag) =>(
+                    <li>
+                    <span class={` flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                    <tag.icon/>
+
+                    {tag.name}
+                    </span>
+                    </li>
+                    
+                ))} 
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+        </article>
+    ))
+}
