@@ -1,16 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro'
-import LinkedInIcon from '../components/icons/LinkedIn.astro'
-import GitHubIcon from '../components/icons/GitHub.astro'
-import InstagramIcon from '../components/icons/Instagram.astro'
-import SocialPill from '../components/SocialPill.astro'
-import MailIcon from '../components/icons/Mail.astro'
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import BriefCase from '../components/icons/BriefCase.astro';
-import CodeIcon from '../components/icons/CodeIcon.astro'
-import Projects from '../components/Projects.astro';
+import Description from '../components/Description.astro';
+import Experiencia from '../components/Experiencia.astro';
+import Proyectos from '../components/Proyectos.astro';
 
 ---
 
@@ -20,69 +12,11 @@ description="Contrata a este excelente desarrollador de software, especializado 
 	
 	<main class="px-4">
 
-		<SectionContainer class="py-44 pb-24">
+		<Description />
+		<Experiencia />
+		<Proyectos />
 
-			<img class="rounded-full size-12 mb-4" src="/julianr.jpg" alt="foto personal">
-
-		<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-			Hola, soy Julian Rodriguez <a 
-				href="https://github.com/JulianRODRIGUEZZ"
-		 	    target="_blank" 
-				rel="noopener"
-				class="flex justify-center items-center">
-				<Badge>Disponible para trabajar</Badge></a>
-		</h1>
-		<h2 class="text-xl lg:text-2xl  text-wrap max-w-[700px]">
-			<span> +2 años de experiencia.</span>
-		    <span class="text-yellow-200/90 ">Desarrollador de Software en frontend y backend.</span>
-		    <span class="text-red-100/90">De Yopal Casanare, Colombia</span>. 
-		    <span class="opacity-75">Me especializo en crear aplicaciones unicas</span></h2>
-
-			<nav class="flex gap-4 mt-8 flex-wrap">
-
-				<SocialPill href="">
-					
-			    	<LinkedInIcon  class="size-4 md:size-6" />
-						LinkedIn
-
-				</SocialPill>
-
-				<SocialPill href="">
-					
-			    	<GitHubIcon  class="size-4 md:size-6" />
-						GitHub
-
-				</SocialPill>
-				<SocialPill href="">
-					
-			    	<InstagramIcon  class="size-4 md:size-6" />
-						Instagram
-
-				</SocialPill>
-				<SocialPill href="">
-					
-			    	<MailIcon  class="size-4 lg:size-6" />
-						julian.9911@hotmail.com
-
-				</SocialPill>
-
-			</nav>
-		</SectionContainer>
-	<SectionContainer id="experiencia">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center x-3">
-			<BriefCase class="size-7" />
-			Experiencia laboral</h2>
 		
-		<Experience />
-	</SectionContainer>
-
-	<SectionContainer id="proyectos">
-		<h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center x-3">
-			<CodeIcon class="size-7" />
-			Proyectos</h2>
-		
-		<Projects />
-	</SectionContainer>
 	</main>
 </Layout>
 

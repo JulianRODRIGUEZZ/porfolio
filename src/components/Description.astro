@@ -1,0 +1,91 @@
+---
+import SectionContainer from '../components/SectionContainer.astro';
+import Badge from '../components/Badge.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import InstagramIcon from '../components/icons/Instagram.astro';
+import MailIcon from '../components/icons/Mail.astro';  
+import SocialPill from '../components/SocialPill.astro';
+
+
+const techs = [
+  { src: "/logos/react.png", alt: "React logo" },
+  { src: "/logos/javascript.png", alt: "JavaScript logo" },
+  { src: "/logos/tailwind.png", alt: "Tailwind CSS logo" },
+  { src: "/logos/wordpress.png", alt: "WordPress logo" },
+  { src: "/logos/java.png", alt: "Java logo" },
+  { src: "/logos/sql.png", alt: "SQL logo" },
+  { src: "/logos/typescript.png", alt: "TypeScript logo" },
+];
+---
+
+<SectionContainer class="py-44 pb-24">
+
+<div class="relative mb-8 w-20 h-20 md:w-20 md:h-20">
+  <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 animate-spin-slow blur-lg opacity-20"></div>
+  <img
+    src="/julianr.jpg"
+    alt="Foto de Julian Rodriguez"
+    class="relative z-10 w-full h-full rounded-full object-cover shadow-2xl ring-4 ring-white/10"
+  />
+</div>
+
+	<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+			Hola, soy Julian Rodriguez <a 
+				href="https://github.com/JulianRODRIGUEZZ"
+		 	    target="_blank" 
+				rel="noopener"
+				class="flex justify-center items-center">
+				<Badge>Disponible para trabajar</Badge></a>
+		</h1>
+		<h2 class="text-xl lg:text-2xl  text-wrap max-w-[700px]">
+			<span> +2 años de experiencia.</span>
+		    <span class="text-yellow-200/90 ">Desarrollador de Software en frontend y backend.</span>
+		    <span class="text-red-100/90">De Yopal Casanare, Colombia</span>. 
+		    <span class="opacity-75">Me especializo en crear paginas web y aplicaciones unicas</span></h2>
+
+			<nav class="flex gap-4 mt-8 flex-wrap">
+
+				<SocialPill href="">
+					
+			    	<LinkedInIcon  class="size-4 md:size-6" />
+						LinkedIn
+
+				</SocialPill>
+
+				<SocialPill href="">
+					
+			    	<GitHubIcon  class="size-4 md:size-6" />
+						GitHub
+
+				</SocialPill>
+				<SocialPill href="">
+					
+			    	<InstagramIcon  class="size-4 md:size-6" />
+						Instagram
+
+				</SocialPill>
+				<SocialPill href="">
+					
+			    	<MailIcon  class="size-4 lg:size-6" />
+						julian.9911@hotmail.com
+
+				</SocialPill>
+
+			</nav>
+
+
+    <div class="overflow-hidden py-10">
+  <div class="flex gap-8 whitespace-nowrap animate-slide">
+    {[...techs, ...techs].map((tech) => (
+      <div
+        class="w-20 h-20 bg-neutral-900 rounded-xl shadow-md flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-110 hover:bg-neutral-300"
+      >
+        <img src={tech.src} alt={tech.alt} class="w-20 h-20 object-contain" />
+      </div>
+    ))}
+  </div>
+</div>
+
+
+		</SectionContainer>
