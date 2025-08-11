@@ -9,91 +9,164 @@ import WordpressIcon from './icons/WordpressIcon.astro'
 const TAGS = {
     ASTRO: {
         name: "Astro",
-        class: "bg-black text white",
+        class: "bg-black text-white",
         icon: AstroIcon,
     },
     TAILWIND: {
         name: "Tailwind CSS",
-        class: "bg-black text white",
+        class: "bg-black text-white",
         icon: TailwindIcon,
     },
     WORDPRESS: {
-        name: " WordPress",
-        class: "bg-black text white",
+        name: "WordPress",
+        class: "bg-black text-white",
         icon: WordpressIcon,
     },
     JAVASCRIPT: {
         name: "JavaScript",
-        class: "bg-black text white",
+        class: "bg-black text-white",
         icon: JavaScriptIcon,
     },
     NODEJS: {
         name: "Nodejs",
-        class: "bg-black text white",
-        icon:  NodejsIcon,
+        class: "bg-black text-white",
+        icon: NodejsIcon,
     },
     SUPABASE: {
         name: "Supabase",
-        class: "bg-black text white",
+        class: "bg-black text-white",
         icon: SupaBaseIcon,
     }
 }
+
 const PROJECTS = [
     {
         title: 'Pagina Web de Hotel Ubicado en Yopal, Casanare',
         description: 'Pagina creada con Astro una de las mejores tecnologias tanto en rendimiento y optimizacion.',
-        link: '#',
+        link: 'https://hotelemporioyopal.com/',
         github: '#',
         image: '/projects/svgl.png',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND,  TAGS.JAVASCRIPT, ]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT]
     },
-
     {
         title: 'Pagina Web de Abogados',
         description: 'Pagina creada con Astro una de las mejores tecnologias tanto en rendimiento y optimizacion.',
-        link: '#',
+        link: 'https://www.osmaabogado.com/',
         github: '#',
         image: '/projects/abogado.png',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT, ]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.JAVASCRIPT]
     },
     {
-        title: 'Pagina Web de una tienda naturista ',
+        title: 'Pagina Web de una tienda naturista',
         description: 'Pagina creada con WordPress una de los mejores cms tanto en control, rendimiento y optimizacion.',
-        link: '#',
+        link: 'https://tuesencianatural1.com/',
         github: '#',
         image: '/projects/tuesencia.png',
-        tags: [TAGS.WORDPRESS, TAGS.TAILWIND, ]
+        tags: [TAGS.WORDPRESS, TAGS.TAILWIND]
     },
     {
-        title: 'Aplicacion Gestion de Bar ',
+        title: 'Aplicacion Gestion de Bar',
         description: 'Aplicacion creada con NodeJs y SupaBase para poder llevar el control de las ventas que se hacen en un bar.',
-        link: '#',
+        link: 'https://v0-bar-application-features.vercel.app/',
         github: '#',
         image: '/projects/appBar.png',
-        tags: [TAGS.NODEJS, TAGS.TAILWIND, TAGS.SUPABASE, ]
+        tags: [TAGS.NODEJS, TAGS.TAILWIND, TAGS.SUPABASE]
     }
-    
 ]
 ---
 
-{
-    PROJECTS.map(({ image, title, description, tags}) =>(
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2 my-6 ">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row mb-2">
-                {tags.map((tag) =>(
-                    <li>
-                    <span class={` flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                    <tag.icon/>
+<style>
+  .project-image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .project-image {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease;
+    display: block;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-image-container:hover .image-overlay {
+    opacity: 1;
+  }
+  
+  .project-image-container:hover .project-image {
+    transform: scale(1.05);
+    filter: brightness(0.4);
+  }
+  
+  .view-page-btn {
+    background-color: #fbbf24;
+    color: #000;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  
+  .project-image-container:hover .view-page-btn {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.1s;
+  }
+  
+  .view-page-btn:hover {
+    background-color: #f59e0b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+  }
+</style>
 
-                    {tag.name}
-                    </span>
+{
+    PROJECTS.map(({ image, title, description, tags, link }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2 my-6">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon/>
+                            {tag.name}
+                        </span>
                     </li>
-                    
                 ))} 
             </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+            <div class="project-image-container shadow-2xl shadow-white/10">
+                <img 
+                    class="project-image" 
+                    src={image} 
+                    alt={`Captura de pantalla del proyecto ${title}`}
+                />
+                <div class="image-overlay">
+                    <a href={link} class="view-page-btn" target="_blank" rel="noopener noreferrer">
+                        Ver Página
+                    </a>
+                </div>
+            </div>
         </article>
     ))
 }
