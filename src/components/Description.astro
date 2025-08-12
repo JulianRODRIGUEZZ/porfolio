@@ -7,7 +7,6 @@ import InstagramIcon from '../components/icons/Instagram.astro';
 import MailIcon from '../components/icons/Mail.astro';  
 import SocialPill from '../components/SocialPill.astro';
 
-
 const techs = [
   { src: "/logos/react.png", alt: "React logo" },
   { src: "/logos/javascript.png", alt: "JavaScript logo" },
@@ -21,71 +20,136 @@ const techs = [
 
 <SectionContainer class="py-44 pb-24">
 
-<div class="relative mb-8 w-20 h-20 md:w-20 md:h-20">
-  <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 animate-spin-slow blur-lg opacity-20"></div>
-  <img
-    src="/foto_julian.jpg"
-    alt="Foto de Julian Rodriguez"
-    class="relative z-10 w-full h-full rounded-full object-cover shadow-2xl ring-4 ring-white/10"
-  />
-</div>
-
-	<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-			Hola, soy Julian Rodriguez <a 
-				href="https://github.com/JulianRODRIGUEZZ"
-		 	    target="_blank" 
-				rel="noopener"
-				class="flex justify-center items-center">
-				<Badge>Disponible para trabajar</Badge></a>
-		</h1>
-		<h2 class="text-xl lg:text-2xl  text-wrap max-w-[700px]">
-			<span> +2 años de experiencia.</span>
-		    <span class="text-yellow-200/90 ">Desarrollador de Software en frontend y backend.</span>
-		    <span class="text-red-100/90">De Yopal Casanare, Colombia</span>. 
-		    <span class="opacity-75">Me especializo en crear paginas web y aplicaciones unicas</span></h2>
-
-			<nav class="flex gap-4 mt-8 flex-wrap">
-
-				<SocialPill href="">
-					
-			    	<LinkedInIcon  class="size-4 md:size-6" />
-						LinkedIn
-
-				</SocialPill>
-
-				<SocialPill href="https://github.com/JulianRODRIGUEZZ?tab=overview&from=2025-08-01&to=2025-08-06">
-					
-			    	<GitHubIcon  class="size-4 md:size-6" />
-						GitHub
-
-				</SocialPill>
-				<SocialPill href="https://www.instagram.com/julian.rodriguez_99/">
-					
-			    	<InstagramIcon  class="size-4 md:size-6" />
-						Instagram
-
-				</SocialPill>
-				<SocialPill href="">
-					
-			    	<MailIcon  class="size-4 lg:size-6" />
-						julian.9911@hotmail.com
-
-				</SocialPill>
-
-			</nav>
-
-
-    <div class="overflow-hidden py-10">
-  <div class="flex gap-8 whitespace-nowrap animate-slide">
-    {[...techs, ...techs].map((tech) => (
-      <div
-        class="w-20 h-20 bg-neutral-900 rounded-xl shadow-md flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-110 hover:bg-neutral-300"
-      >
-        <img src={tech.src} alt={tech.alt} class="w-20 h-20 object-contain" />
-      </div>
-    ))}
+  <div class="relative mb-8 w-20 h-20 md:w-20 md:h-20">
+    <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 animate-spin-slow blur-lg opacity-20"></div>
+    <img
+      src="/foto_julian.jpg"
+      alt="Foto de Julian Rodriguez"
+      class="relative z-10 w-full h-full rounded-full object-cover shadow-2xl ring-4 ring-white/10"
+    />
   </div>
+
+  <!-- H1 con animación -->
+ <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4  lg:pb-2 md:whitespace-nowrap">
+  Hola, soy Julian&nbsp;
+</h1>
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-bold flex items-center gap-x-4 pb-6 lg:pb-10 md:whitespace-nowrap"><span id="typewriter" class="text-yellow-300 flex-shrink-0"></span></h1>
+
+
+
+<!-- Badge fijo debajo o al lado -->
+<div class="mt-2">
+  <a 
+    href="https://github.com/JulianRODRIGUEZZ"
+    target="_blank" 
+    rel="noopener"
+  >
+    <Badge>Disponible para trabajar</Badge>
+  </a>
 </div>
 
+  <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+	<span>Mi nombre es</span>
+	<span class="text-yellow-200/90">Julian Rodriguez.</span>
+    <span>+2 años de experiencia.</span>
+    
+    <span class="text-red-100/90">De Yopal Casanare, Colombia</span>. 
+    <span class="opacity-75">Me especializo en crear páginas web, aplicaciones únicas, en automatizar procesos y en la creacion de asistentes virtuales con IA</span>
+  </h2>
 
-		</SectionContainer>
+  <nav class="flex gap-4 mt-8 flex-wrap">
+    <SocialPill href="">
+      <LinkedInIcon class="size-4 md:size-6" />
+      LinkedIn
+    </SocialPill>
+
+    <SocialPill href="https://github.com/JulianRODRIGUEZZ?tab=overview&from=2025-08-01&to=2025-08-06">
+      <GitHubIcon class="size-4 md:size-6" />
+      GitHub
+    </SocialPill>
+
+    <SocialPill href="https://www.instagram.com/julian.rodriguez_99/">
+      <InstagramIcon class="size-4 md:size-6" />
+      Instagram
+    </SocialPill>
+
+    <SocialPill href="">
+      <MailIcon class="size-4 lg:size-6" />
+      julian.9911@hotmail.com
+    </SocialPill>
+  </nav>
+
+  <div class="overflow-hidden py-10">
+    <div class="flex gap-8 whitespace-nowrap animate-slide">
+      {[...techs, ...techs].map((tech) => (
+        <div
+          class="w-20 h-20 bg-neutral-900 rounded-xl shadow-md flex items-center justify-center shrink-0 transition-transform duration-300 hover:scale-110 hover:bg-neutral-300"
+        >
+          <img src={tech.src} alt={tech.alt} class="w-20 h-20 object-contain" />
+        </div>
+      ))}
+    </div>
+  </div>
+
+</SectionContainer>
+
+<!-- Script que solo corre en el cliente -->
+<script is:inline>
+  if (typeof window !== "undefined") {
+    window.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById("typewriter");
+      if (!el) return; // Evita error si no existe
+
+      const palabras = ["Desarrollador Full Stack", "Desarrollador Frontend", "Desarrollador Backend", "Desarrollo Automatizado"];
+      let i = 0;
+      let j = 0;
+      let borrando = false;
+      const velocidad = 120;
+      const velocidadBorrado = 60;
+      const pausaPalabra = 1500;
+
+      function escribir() {
+        const palabraActual = palabras[i];
+
+        if (!borrando && j < palabraActual.length) {
+          el.textContent = palabraActual.substring(0, j + 1);
+          j++;
+          setTimeout(escribir, velocidad);
+        } else if (borrando && j > 0) {
+          el.textContent = palabraActual.substring(0, j - 1);
+          j--;
+          setTimeout(escribir, velocidadBorrado);
+        } else if (!borrando && j === palabraActual.length) {
+          borrando = true;
+          setTimeout(escribir, pausaPalabra);
+        } else if (borrando && j === 0) {
+          borrando = false;
+          i = (i + 1) % palabras.length;
+          setTimeout(escribir, velocidad);
+        }
+      }
+
+      escribir();
+    });
+  }
+</script>
+
+<!-- Estilos para el cursor -->
+<style>
+  #typewriter::after {
+    content: '|';
+    animation: blink 0.7s infinite;
+    color: #fff;
+    margin-left: 2px;
+  }
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+</style>
+
+
+
+
+
+		

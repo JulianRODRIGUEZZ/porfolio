@@ -7,8 +7,9 @@ export const POST: APIRoute = async ({ request }) => {
   const asunto = form.get('asunto');
   const message = form.get('message');
   const cel = form.get('cel'); 
+  const countryCode = form.get('countryCode');
 
-  console.log({ name, email, message, asunto, cel, });
+  console.log({ name, email, message, asunto, cel, countryCode, });
 
   return new Response(
     JSON.stringify({ success: true }),

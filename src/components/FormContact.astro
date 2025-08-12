@@ -1,4 +1,4 @@
-<section class="min-h-screen bg-gradient-to-br">
+<section class="min-h-screen bg-gradient-to-br" id="formcontact">
   <div class="max-w-6xl mx-auto py-12">
     <!-- Header -->
     <div class="text-center mb-12">
@@ -90,10 +90,27 @@
               </div>
             </div>
 
-            <div class="space-y-2">
-                <label for="cel" class="block text-slate-300 text-sm font-medium">Celular</label>
-                <input type="text" id="cel" name="cel" placeholder="Tu numero de telefono o celular"
-                  class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-md text-white" required />
+           <div class="space-y-2">
+  <label for="cel" class="block text-slate-300 text-sm font-medium">Celular</label>
+  <div class="flex">
+    <select id="countryCode" name="countryCode"
+      class="px-3 py-2 bg-slate-700/50 border border-slate-600 rounded-l-md text-white focus:outline-none">
+      <option value="+57">🇨🇴 +57</option>
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+52">🇲🇽 +52</option>
+      <option value="+34">🇪🇸 +34</option>
+      <option value="+54">🇦🇷 +54</option>
+      <option value="+55">🇧🇷 +55</option>
+      <option value="+51">🇵🇪 +51</option>
+      <option value="+593">🇪🇨 +593</option>
+      <!-- Puedes agregar más países aquí -->
+    </select>
+
+    <input type="tel" id="cel" name="cel" placeholder="Tu número"
+      class="w-full px-3 py-2 bg-slate-700/50 border border-slate-600 border-l-0 rounded-r-md text-white focus:outline-none"
+      required />
+  </div>
+</div>
 
             <div class="space-y-2">
                 <label for="asunto" class="block text-slate-300 text-sm font-medium">Asunto</label>
